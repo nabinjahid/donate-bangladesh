@@ -30,10 +30,10 @@
 
 <body>
     <!-- header -->
-    <header class="w-full md:sticky md:top-0 md:z-10 ">
+    <header id="header" class="w-full md:sticky md:top-0 md:z-10">
         <div class="max-w-[1140px] mx-auto shadow-sm pb-4 font-[lexend]">
             <!-- navbar -->
-            <div class="flex flex-col md:flex-row justify-between bg-[#F9F7F3] p-4 items-center space-y-3 rounded-sm">
+            <div id="nav" class="flex flex-col md:flex-row justify-between bg-[#F9F7F3] p-4 items-center space-y-3 rounded-sm">
                 <div class="order-3 md:order-1 mt-3 md:mt-0">
                     <button id="blog-page" class="btn btn-info">Blog</button>
                 </div>
@@ -44,7 +44,7 @@
                 <div class="flex space-x-1 order-2 md:order-3">
                     <img src="./assets/coin.png" alt="">
                     <p class="space-x-2 text-[#111111B3] font-bold items-center text-2xl">
-                        <span>5500</span><span>BDT</span></p>
+                        <span id="main-balance">5500</span><span>BDT</span></p>
                 </div>
             </div>
             <!-- donation and history button -->
@@ -70,7 +70,7 @@
                         <div class="shadow p-3 rounded-md bg-[#1111110D]">
                             <div class="flex items-center gap-2">
                                 <img src="./assets/coin.png" alt="">
-                                <div class="space-x-2 font-bold text-[#111111B3] text-xl"><span>0</span><span>BDT</span>
+                                <div class="space-x-2 font-bold text-[#111111B3] text-xl"><span id="donate-in-noakhali">0</span><span>BDT</span>
                                 </div>
                             </div>
                         </div>
@@ -88,8 +88,8 @@
 
                     <!-- Input and button -->
                     <div class="space-y-2 mt-3 md:mt-0">
-                        <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full">
-                        <button class="btn btn-info w-full">Donate Now</button>
+                        <input id="noakhali-input" type="text" placeholder="Write Donation Amount" class="input input-bordered w-full">
+                        <button id="noakhali-donat-btn" class="btn btn-info w-full">Donate Now</button>
                     </div>
                 </div>
 
