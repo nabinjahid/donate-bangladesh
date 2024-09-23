@@ -30,21 +30,27 @@ document.getElementById('donation').addEventListener('click', function () {
 // header section stiky top and bg blur
 window.addEventListener('scroll', function () {
      if (window.scrollY > 50) {
-          document.getElementById('header').classList.add('backdrop-blur-lg')
+          document.getElementById('header').classList.add('bg-[#F9F7F3]/60', 'backdrop-blur-lg')
           document.getElementById('nav').classList.remove('bg-[#F9F7F3]')
-          document.getElementById('nav').classList.add('bg-[#F9F7F3]/30', 'backdrop-blur-lg')
      } else {
-          document.getElementById('header').classList.remove('backdrop-blur-lg')
-          document.getElementById('nav').classList.remove('bg-[#F9F7F3]/30', 'backdrop-blur-lg')
+          document.getElementById('header').classList.remove('bg-[#F9F7F3]/60', 'backdrop-blur-l6')
           document.getElementById('nav').classList.add('bg-[#F9F7F3]')
      }
 })
 // -----------------
 
 // common function
-function takeInputGiveOutput(inputId, stateId) {
+function takeInputGiveOutput(inputId, stateId, name, btn) {
 
      const inputVlue = parseFloat(document.getElementById(inputId).value);
+     console.log(typeof inputVlue);
+
+
+     if (isNaN(inputVlue) || inputVlue < 0) {
+          alert('Invalid Donation amount')
+          return document.getElementById(inputId).value = '';
+     }
+
      const mainBalance = parseFloat(document.getElementById('main-balance').innerText)
      const remainingBalance = mainBalance - inputVlue;
      document.getElementById('main-balance').innerText = remainingBalance.toFixed(2);
@@ -54,19 +60,34 @@ function takeInputGiveOutput(inputId, stateId) {
      const newStateValue = previousStateValue + inputVlue;
      document.getElementById(stateId).innerText = newStateValue.toFixed(2);
 
-     return document.getElementById(inputId).value = '';
+     // creating history div
+     const historyContainer = document.getElementById('donation-history')
+     const div = document.createElement('div');
+     let updateTime = new Date().toUTCString();
+
+     div.innerHTML = `
+          <h1 class="font-bold text-xl">${inputVlue} BDT is donated for ${btn === 'aid-donate-btn'?'Aid for Injured in the' :'flood donation in'} ${name} , Bangladesh</h1>
+                <p>${updateTime}</p>
+     `;
+     div.classList.add('border', 'rounded-lg', 'p-4', 'space-y-3')
+     historyContainer.appendChild(div);
+
+
+
+     document.getElementById(inputId).value = ''
+     return success.showModal();
 }
 // -----------------
 
 document.getElementById('noakhali-donat-btn').addEventListener('click', function () {
-     takeInputGiveOutput('noakhali-input', 'noakhali-amount-state');
+     takeInputGiveOutput('noakhali-input', 'noakhali-amount-state', 'Noakhali', 'noakhali-donat-btn');
 
 })
 document.getElementById('feni-donate-btn').addEventListener('click', function () {
-     takeInputGiveOutput('feni-input','feni-amount-state');
+     takeInputGiveOutput('feni-input', 'feni-amount-state', 'Feni', 'feni-donate-btn');
 
 })
 document.getElementById('aid-donate-btn').addEventListener('click', function () {
-     takeInputGiveOutput('aid-input','aid-amount-state');
+     takeInputGiveOutput('aid-input', 'aid-amount-state', 'Quota Movement', 'aid-donate-btn');
 
 })
