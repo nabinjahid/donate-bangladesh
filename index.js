@@ -42,22 +42,31 @@ window.addEventListener('scroll', function () {
 // -----------------
 
 // common function
-function takeInputGiveOutput(id) {
-     const inputVlue = parseFloat(document.getElementById(id).value);
+function takeInputGiveOutput(inputId, stateId) {
+
+     const inputVlue = parseFloat(document.getElementById(inputId).value);
      const mainBalance = parseFloat(document.getElementById('main-balance').innerText)
      const remainingBalance = mainBalance - inputVlue;
      document.getElementById('main-balance').innerText = remainingBalance.toFixed(2);
 
-     document.getElementById(id).value='';
-     return inputVlue;
+
+     const previousStateValue = parseFloat(document.getElementById(stateId).innerText)
+     const newStateValue = previousStateValue + inputVlue;
+     document.getElementById(stateId).innerText = newStateValue.toFixed(2);
+
+     return document.getElementById(inputId).value = '';
 }
 // -----------------
 
 document.getElementById('noakhali-donat-btn').addEventListener('click', function () {
-     const donationAmount = takeInputGiveOutput('noakhali-input');
-     document.getElementById('donate-in-noakhali').innerText = donationAmount;
-     console.log(donationAmount);
+     takeInputGiveOutput('noakhali-input', 'noakhali-amount-state');
 
+})
+document.getElementById('feni-donate-btn').addEventListener('click', function () {
+     takeInputGiveOutput('feni-input','feni-amount-state');
 
+})
+document.getElementById('aid-donate-btn').addEventListener('click', function () {
+     takeInputGiveOutput('aid-input','aid-amount-state');
 
 })
