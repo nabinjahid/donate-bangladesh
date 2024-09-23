@@ -43,15 +43,15 @@ window.addEventListener('scroll', function () {
 function takeInputGiveOutput(inputId, stateId, name, btn) {
 
      const inputVlue = parseFloat(document.getElementById(inputId).value);
-     console.log(typeof inputVlue);
+     const mainBalance = parseFloat(document.getElementById('main-balance').innerText)
 
 
-     if (isNaN(inputVlue) || inputVlue < 0) {
+     if (isNaN(inputVlue) || inputVlue < 0 || inputVlue > mainBalance) {
           alert('Invalid Donation amount')
           return document.getElementById(inputId).value = '';
      }
 
-     const mainBalance = parseFloat(document.getElementById('main-balance').innerText)
+
      const remainingBalance = mainBalance - inputVlue;
      document.getElementById('main-balance').innerText = remainingBalance.toFixed(2);
 
@@ -72,8 +72,7 @@ function takeInputGiveOutput(inputId, stateId, name, btn) {
      div.classList.add('border', 'rounded-lg', 'p-4', 'space-y-3')
      historyContainer.appendChild(div);
 
-
-
+     
      document.getElementById(inputId).value = ''
      return success.showModal();
 }
