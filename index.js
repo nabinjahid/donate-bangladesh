@@ -42,11 +42,11 @@ window.addEventListener('scroll', function () {
 // common function
 function takeInputGiveOutput(inputId, stateId, name, btn) {
 
-     const inputVlue = parseFloat(document.getElementById(inputId).value);
+     const inputVlue = Number(document.getElementById(inputId).value);
      const mainBalance = parseFloat(document.getElementById('main-balance').innerText)
 
 
-     if (isNaN(inputVlue) || inputVlue < 0 || inputVlue > mainBalance) {
+     if (isNaN(inputVlue) || inputVlue <= 0 || inputVlue > mainBalance) {
           alert('Invalid Donation amount')
           return document.getElementById(inputId).value = '';
      }
@@ -66,13 +66,13 @@ function takeInputGiveOutput(inputId, stateId, name, btn) {
      let updateTime = new Date().toUTCString();
 
      div.innerHTML = `
-          <h1 class="font-bold text-xl">${inputVlue} BDT is donated for ${btn === 'aid-donate-btn'?'Aid for Injured in the' :'flood donation in'} ${name} , Bangladesh</h1>
-                <p>${updateTime}</p>
+          <h1 class="font-bold text-xl">${inputVlue} BDT is donated as ${btn === 'aid-donate-btn'?'Aid for Injured in the' :'flood donation for'} ${name} , Bangladesh</h1>
+          <p>${updateTime}</p>
      `;
      div.classList.add('border', 'rounded-lg', 'p-4', 'space-y-3')
      historyContainer.appendChild(div);
 
-     
+
      document.getElementById(inputId).value = ''
      return success.showModal();
 }
