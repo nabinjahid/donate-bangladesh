@@ -4,8 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donate-Bangladesh</title>
+    <!-- lexend font from google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <!-- tailwind and daisyui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- tailwind config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        lexend: 'Lexend'
+                    },
+                    
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <h1>Website for donation Bangladesh</h1>
+<body >
+    <!-- header -->
+    <header class="w-full md:sticky md:top-0 md:z-10 backdrop-blur-md">
+        <div class="max-w-[1140px] mx-auto shadow-sm pb-4 font-[lexend]">
+            <!-- navbar -->
+            <div class="flex flex-col md:flex-row justify-between bg-[#F9F7F3] px-4 py-6 items-center space-y-3">
+                <div class="order-3 md:order-1 mt-3 md:mt-0">
+                    <button class="btn btn-info">Blog</button>
+                    <button class="btn btn-info hidden">Home</button>
+                </div>
+                <div class="flex items-center space-x-2 order-1 md:order-2">
+                    <img src="./assets/logo.png" alt="">
+                    <h1 class="font-bold text-xl md:text-2xl">Donate Bangladesh</h1>
+                </div>
+                <div class="flex space-x-1 order-2 md:order-3">
+                    <img src="./assets/coin.png" alt="">
+                    <p class="space-x-2 text-[#111111B3] font-bold items-center text-2xl"><span>5500</span><span>BDT</span></p>
+                </div>
+            </div>
+            <!-- donation and history button -->
+             <div class="text-center space-x-2 mt-10">
+                <button class="btn btn-info">Donation</button>
+                <button class="btn">History</button>
+             </div>
+        </div>
+
+    </header>
+    <!-- main -->
+    <main class="w-full max-w-[1140px] mx-auto mt-10 p-2">
+        <!-- card- -->
+        <div class="card lg:card-side bg-base-100 shadow-xl p-4 border font-[lexend]">
+            <figure class="w-full md:w-1/2">
+              <img
+                src="./assets/noakhali.png"
+                alt="Album" />
+            </figure>
+            <div class="card-body w-full md:w-1/2">
+                <!-- stat start -->
+                <div class="flex">
+                    <div class="w-full md:w-auto shadow p-3 rounded-md bg-[#1111110D]">
+                        <div class="flex items-center gap-2">
+                            <img src="./assets/coin.png" alt="">
+                            <div class="space-x-2 font-bold text-[#111111B3] text-xl"><span>0</span><span>BDT</span></div>
+                        </div>
+                      </div>
+                </div>
+                <!-- stat end -->
+              <h2 class="card-title">Donate for Flood at Noakhali, Bangladesh</h2>
+              <p class="text-[#111111B2]">The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
+              <div class="space-y-2">
+                <input type="text" placeholder="Write Donation Amount" class="input input-bordered w-full ">
+                <button class="btn btn-info w-full">Donate Now</button>
+              </div>
+            </div>
+          </div>
+    </main>
+
+     <!-- Footer -->
+  <footer class="w-full">
+    <div class="max-w-[1140px] mx-auto">
+      <p>this is footer</p>
+    </div>
+  </footer>
 </body>
 </html>
