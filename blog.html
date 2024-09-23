@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate-Bangladesh-blog</title>
+    <!-- lexend font from google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <!-- tailwind and daisyui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font awsem cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- tailwind config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        lexend: 'Lexend'
+                    },
+
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- header -->
+    <header class="w-full md:sticky md:top-0 md:z-10">
+        <div class="max-w-[1140px] mx-auto shadow-sm pb-4 font-[lexend]">
+            <!-- navbar -->
+            <div class="flex flex-col md:flex-row justify-between bg-[#F9F7F3] p-4 items-center space-y-3 rounded-sm">
+                <div class="order-3 md:order-1 mt-3 md:mt-0">
+                    <button id="home-page" class="btn btn-info">Home</button>
+                </div>
+                <div class="flex items-center space-x-2 order-1 md:order-2">
+                    <img src="./assets/logo.png" alt="">
+                    <h1 class="font-bold text-xl md:text-2xl">Donate Bangladesh</h1>
+                </div>
+                <div class="flex space-x-1 order-2 md:order-3">
+                    <img src="./assets/coin.png" alt="">
+                    <p class="space-x-2 text-[#111111B3] font-bold items-center text-2xl">
+                        <span>5500</span><span>BDT</span></p>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <main class="w-full max-w-[1140px] mx-auto mt-10 p-2 font-lexend">
+        <h1 class="font-bold text-3xl mb-1">Important FAQ <span class="text-4xl"><i class="fa-solid fa-clipboard-question"></i></span></h1>
+        <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" checked="checked" />
+            <div class="collapse-title text-xl font-medium">What is the Document Object Mode (DOM)?</div>
+            <div class="collapse-content">
+              <p>The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of a webpage as a tree of objects, where each part of the document (like elements, attributes, text, etc.) is treated as an object that can be accessed and manipulated through scripting languages such as JavaScript.</p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">How do you seclect an Element from DOM ?</div>
+            <div class="collapse-content">
+              <p>To select an element from the DOM, you can use various methods:
+
+                getElementById: Selects an element based on its unique id.
+                getElementsByClassName: Selects all elements with a specific class name.
+                getElementsByTagName: Selects all elements with a given tag name.
+                querySelector: Selects the first element that matches a specified CSS selector.
+                querySelectorAll: Selects all elements that match a CSS selector.
+                getElementsByName: Selects elements by their name attribute.
+                These methods allow interaction and manipulation of elements within a webpage.</p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM , and why is it useful?</div>
+            <div class="collapse-content">
+              <p>Event delegation in the context of the DOM is a technique where you attach a single event listener to a parent element rather than adding multiple listeners to individual child elements. The event triggered by a child element bubbles up to the parent, allowing the parent to handle events for all its children.
+                Why it’s useful:
+                Efficiency: Instead of attaching multiple event listeners to individual elements (which can be resource-intensive), a single listener on the parent can handle events for all child elements.
+                Dynamic Content: It’s useful when working with dynamically added elements because the parent listener will automatically respond to new children, eliminating the need to reassign event listeners.
+                Event delegation simplifies event management and improves performance, especially in applications with many elements or dynamically changing content.</p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">How do you manipulate an elements attributes and styles using the DOM</div>
+            <div class="collapse-content">
+              <p>To manipulate an element's attributes and styles using the DOM, you can use various properties and methods:
+                1. Manipulating Attributes:
+                setAttribute(): Sets the value of an attribute.
+                2. Manipulating Styles:
+                style property: Used to directly modify the inline styles of an element.</p>
+            </div>
+          </div>
+    </main>
+    
+
+    <!-- js file -->
+     <script src="./blog.js"></script>
+</body>
+</html>
