@@ -76,17 +76,19 @@ function takeInputGiveOutput(inputId, stateId, name, btn) {
      document.getElementById(inputId).value = ''
      return success.showModal();
 }
+
+// another common function
+function takeParameter(input, stateValue, cardName, cardBtn) {
+     takeInputGiveOutput(input,stateValue, cardName,cardBtn);
+}
 // -----------------
 
 document.getElementById('noakhali-donat-btn').addEventListener('click', function () {
-     takeInputGiveOutput('noakhali-input', 'noakhali-amount-state', 'Noakhali', 'noakhali-donat-btn');
-
+     takeParameter('noakhali-input', 'noakhali-amount-state', 'Noakhali', 'noakhali-donat-btn')
 })
 document.getElementById('feni-donate-btn').addEventListener('click', function () {
-     takeInputGiveOutput('feni-input', 'feni-amount-state', 'Feni', 'feni-donate-btn');
-
+     takeParameter('feni-input', 'feni-amount-state', 'Feni', 'feni-donate-btn')
 })
 document.getElementById('aid-donate-btn').addEventListener('click', function () {
-     takeInputGiveOutput('aid-input', 'aid-amount-state', 'Quota Movement', 'aid-donate-btn');
-
+     takeParameter('aid-input', 'aid-amount-state', 'Quota Movement', 'aid-donate-btn') 
 })
