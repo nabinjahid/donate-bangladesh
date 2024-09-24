@@ -63,7 +63,7 @@ function takeInputGiveOutput(inputId, stateId, name, btn) {
      // creating history div
      const historyContainer = document.getElementById('donation-history')
      const div = document.createElement('div');
-     let updateTime = new Date().toUTCString();
+     let updateTime = new Date().toLocaleString('en-US');
 
      div.innerHTML = `
           <h1 class="font-bold text-xl">${inputVlue} BDT is donated as ${btn === 'aid-donate-btn'?'Aid for Injured in the' :'flood donation for'} ${name} , Bangladesh</h1>
